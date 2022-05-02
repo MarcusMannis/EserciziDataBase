@@ -1,1 +1,0 @@
-appena visualizzo  su git cancello
