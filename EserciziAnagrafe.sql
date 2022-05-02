@@ -9,3 +9,8 @@ Esercizio 3
 select distinct Persona.CittàNascita, Persona.Nome
 from Persona join Genia on Persona.Nome = Genia.Genitore
 Where Persona.Età >=50
+
+Esercizio 4
+
+select distinct F.Genitore
+from Genia F join Genia G on G.Genitore = F.Figlio
