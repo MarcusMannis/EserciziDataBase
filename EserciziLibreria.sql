@@ -100,6 +100,6 @@ select *
 from romanzo, Personaggio, PersonaggioRomanzo
 where personaggio.nome = "Harry" and ((personaggio.id = PersonaggioRomanzo.personaggio) and (romanzo.id = PersonaggioRomanzo.romanzo))
 
-blablablablabla
+blablablabla
 
 muuuuuu
