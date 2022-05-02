@@ -96,3 +96,7 @@ select *
 from romanzo, Personaggio, PersonaggioRomanzo
 where personaggio.nome = "Harry" and ((personaggio.id = PersonaggioRomanzo.personaggio) and (romanzo.id = PersonaggioRomanzo.romanzo))
 
+Esercizio 20
+select *
+from Romanzo R left join Autore A on R.Autore = A.ID
+where A.ID is null
