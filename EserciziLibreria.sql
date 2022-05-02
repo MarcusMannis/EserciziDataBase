@@ -102,4 +102,4 @@ where personaggio.nome = "Harry" and ((personaggio.id = PersonaggioRomanzo.perso
 
 blablablablabla
 
-mao bau cracra
+muuuuuu
