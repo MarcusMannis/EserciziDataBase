@@ -1,101 +1,97 @@
-select PersonaggioRomanzo.Nome, Personaggio.Cognome, Romanzo.Titolo
-from Personaggio, Romanzo, PersonaggioRomanzo
-where PersonaggioRomanzo.Personaggio = Personaggio.ID and PersonaggioRomanzo.Romanzo = Romanzo.ID
-
-1.
+Esercizio 1
 select Autore
 from Romanzo
 where AnnoPubblicazione = 2009
 
-2.
+Esercizio 2
 select Titolo
 from Romanzo
 where AnnoPubblicazione > 1990
 
-3.
+Esercizio 3 
 select *
 from Romanzo
 where AnnoPubblicazione > 1900
 
-4.
+Esercizio 4
 select autore.Nome, autore.Cognome, Romanzo.Titolo
 from Romanzo, Autore
 where Romanzo.Autore = Autore.ID
 
-5.
+Esercizio 5
 select autore.Cognome, autore.nome, Romanzo.Titolo
 from Romanzo, Autore
 where Romanzo.Autore = Autore.ID
 order by Autore.Cognome
 
-6.
+Esercizio 6
 select autore.nome, autore.cognome, romanzo.Titolo
 from romanzo, autore
 where romanzo.autore = autore.ID and autore.Nazionalità = "russo"
 order by autore.cognome
 
-7.
+Esercizio 7
 select romanzo.Titolo
 from romanzo, autore
 where romanzo.autore = autore.id and (autore.DataNascita > 1809 and autore.DataNascita < 2000)
 order by autore.cognome
 
-8.
+Esercizio 8
 select romanzo.titolo, romanzo.AnnoPubblicazione
 from romanzo, autore
 where romanzo.autore = autore.id and autore.DataMorte is null
 
-9.
+Esercizio 9 
 select *
 from romanzo, autore
 where romanzo.autore = autore.id and (autore.DataMorte is null or autore.LuogoMorte != "Torino")
 
-10.
+Esercizio 10
 select romanzo.titolo, romanzo.AnnoPubblicazione
 from romanzo, autore
 where romanzo.autore = autore.id and autore.LuogoNascita = "Roma"
 
-11.
+Esercizio 11
 select *
 from romanzo
 where romanzo.titolo like "Tokyo%"
 
-12.
+Esercizio 12
 select *
 from romanzo
 where romanzo.titolo like "%Sposi%"
 
-13.
+Esercizio 13
 select *
 from romanzo
 where romanzo.titolo like "%i_"
 
-14.
+Esercizio 14
 select *
 from romanzo
 where romanzo.titolo like "%blues"
 
-15.
+Esercizio 15
 select *
 from romanzo
 where romanzo.titolo like "%Zeno%"
 
-16.
+Esercizio 16
 select*
 from romanzo
 where romanzo.AnnoPubblicazione < 1900 and romanzo.titolo like "%Sposi%" 
 
-17.
+Esercizio 17
 select * 
 from romanzo, autore
 where romanzo.autore = autore.id and autore.nome = "Alessandro" and autore.cognome = "Manzoni"
 
-18.
+Esercizio 18
 select distinct *
 from romanzo, autore
 where romanzo.autore = autore.id and autore.cognome = "Don DeLillo"
 
-19.
+Esercizio 19
 select *
 from romanzo, Personaggio, PersonaggioRomanzo
 where personaggio.nome = "Harry" and ((personaggio.id = PersonaggioRomanzo.personaggio) and (romanzo.id = PersonaggioRomanzo.romanzo))
