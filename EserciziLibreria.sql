@@ -15,7 +15,7 @@ where AnnoPubblicazione > 1990
 3.
 select *
 from Romanzo
-where AnnoPubblicazione > 1900
+where AnnoPubblicazione > 1901
 
 4.
 select autore.Nome, autore.Cognome, Romanzo.Titolo
@@ -48,7 +48,7 @@ where romanzo.autore = autore.id and autore.DataMorte is null
 9.
 select *
 from romanzo, autore
-where romanzo.autore = autore.id and (autore.DataMorte is null or autore.LuogoMorte != "Tolino")
+where romanzo.autore = autore.id and (autore.DataMorte is null or autore.LuogoMorte != "Torino")
 
 10.
 select romanzo.titolo, romanzo.AnnoPubblicazione
@@ -101,5 +101,9 @@ from romanzo, Personaggio, PersonaggioRomanzo
 where personaggio.nome = "Harry" and ((personaggio.id = PersonaggioRomanzo.personaggio) and (romanzo.id = PersonaggioRomanzo.romanzo))
 
 blablablabla
+ciaooooo
 
-muuuuuu
+ciccopasticcio
+
+
+
