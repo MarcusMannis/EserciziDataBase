@@ -24,10 +24,11 @@ where programmtore.categoria= 10 and programma.linguaggio != "Java"
 
 Esercizio 4
 
-select distinct autore.codice as autore, a1.codice as aiutante
-from autore join programma on programma.id = autore.id
-    join autore as a1 on a1.id = programma.id
-where programma.linguaggio= "Python" and autore.codice != a1.codice
+select distinct A1.codice as A1, A2.codice as A2
+from autore A1 join programma on A1.id = programma.id
+    join autore A2 on A1.id = A2.id
+where programma.linguaggio= "Python" and A1.codice != A2.codice
+    and A1.codice > A2.codice
 
 Esercizio 5
 
