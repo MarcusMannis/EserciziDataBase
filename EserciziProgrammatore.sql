@@ -35,3 +35,11 @@ select programamtore.codice, programmatore.nome
 from autore join programmatore on autore.codice = programamtore.codice
     join programma on programma.id = autore.id
 where programma.linguaggio = "Java"
+
+Esercizio 6
+
+select programmatore.nome, programma.anno, count(programma.id)
+from autore join programmatore on autore.codice = programmatore.codice
+    join programma on autore.id = programma.id
+group by programmatore.codice, programma.anno
+
