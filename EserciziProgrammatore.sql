@@ -1,3 +1,5 @@
+use programmatori
+
 Esercizio 1
 
 select autore.codice
@@ -20,3 +22,9 @@ from autore join programmatore on autore.codice= programmatore.codice
     join programma on programma.id  = autore.id
 where programmtore.categoria= 10 and programma.linguaggio != "Java"
 
+Esercizio 5
+
+select programamtore.codice, programmatore.nome
+from autore join programmatore on autore.codice = programamtore.codice
+    join programma on programma.id = autore.id
+where programma.linguaggio = "Java"
