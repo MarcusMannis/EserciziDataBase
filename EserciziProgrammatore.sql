@@ -1,4 +1,4 @@
-use programmatori
+use programmatori;
 
 Esercizio 1
 
@@ -44,3 +44,8 @@ from autore join programmatore on autore.codice = programmatore.codice
     join programma on autore.id = programma.id
 group by programmatore.codice, programma.anno
 
+Esercizio 7
+
+select linguaggio, count(autore.codice)/count(distinct programma.id)
+from autore join programma on autore.id=Programma.id
+group by linguaggio
