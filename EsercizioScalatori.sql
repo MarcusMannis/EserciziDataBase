@@ -10,3 +10,10 @@ from scalatore join scalata on scalatore.CF = scalata.scalatore
     join nazione on nazione.nome = scalata.nazione
 where scalatore.annoNascita < 1980
 group by scalatore.CF, nazione.continente
+
+Esercizio 3
+
+select nazione.nome, nazione.continente
+from scalatore join scalata on scalatore.cf = scalata.scalatore
+    join nazione on nazione.nome = scalata.nazione
+where (scalata.anno - scalatore.annoNascita) <18
