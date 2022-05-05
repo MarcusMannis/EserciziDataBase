@@ -1,3 +1,4 @@
+
 Esercizio 1
 
 select distinct s.scalatore as A, n.continente as B
@@ -39,3 +40,4 @@ from scalatore join scalata on scalatore.cf = scalata.scalatore
     join nazione on nazione.nome = scalata.nazione
 group by scalata.anno, scalata.nazione having count(*)>1
 order by scalata.anno
+
