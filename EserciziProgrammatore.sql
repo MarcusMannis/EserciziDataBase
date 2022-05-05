@@ -1,5 +1,3 @@
-use programmatori;
-
 Esercizio 1
 
 select autore.codice
@@ -31,7 +29,7 @@ where programma.linguaggio= "Python" and A1.codice != A2.codice
     and A1.codice > A2.codice
 
 Esercizio 5
-
+use programmatori;
 select programamtore.codice, programmatore.nome
 from autore join programmatore on autore.codice = programamtore.codice
     join programma on programma.id = autore.id
@@ -49,3 +47,15 @@ Esercizio 7
 select linguaggio, count(autore.codice)/count(distinct programma.id)
 from autore join programma on autore.id=Programma.id
 group by linguaggio
+
+
+Esercizio 5 subquery
+
+select programamtore.codice, programmatore.nome
+from programma
+where exists (select *
+              from programmatori
+              where programma.linguaggio="Java")
+and exists (select *
+            from programma
+            where programma.id =autore.id)
