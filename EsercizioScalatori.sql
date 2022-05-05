@@ -65,10 +65,10 @@ where continente not in
 
 Esercizio 9
 
-select distinct Scalatore.*
-from Scalatore join scalata on scalatore.cf = scalata.scalatore
-where Scalatore.nazioneNascita in
-    (select Scalata.nazione
-    from Scalata
-    where (Scalata.anno- Scalatore.annoNascita) < 18
+select cf
+from Scalatore
+where cf not in(
+    select scalatore
+    from scalata join scalatore on scalatore.nazioneNascita = scalata.nazione
+    where scalata.anno - scalaotre.annoNascita >17
     )
