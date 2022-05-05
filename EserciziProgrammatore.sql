@@ -29,7 +29,7 @@ where programma.linguaggio= "Python" and A1.codice != A2.codice
     and A1.codice > A2.codice
 
 Esercizio 5
-use programmatori;
+
 select programamtore.codice, programmatore.nome
 from autore join programmatore on autore.codice = programamtore.codice
     join programma on programma.id = autore.id
@@ -51,11 +51,21 @@ group by linguaggio
 
 Esercizio 5 subquery
 
-select programamtore.codice, programmatore.nome
-from programma
-where exists (select *
-              from programmatori
-              where programma.linguaggio="Java")
-and exists (select *
+select programmatore.codice, programmatore.nome
+from programmatore join autore on autore.Codice = programmatore.codice
+    join programma on programma.ID = autore.ID
+where autore.id
+    in( select programma.id
             from programma
-            where programma.id =autore.id)
+            where programma.linguaggio = "Java"
+    )
+group by programma.linguaggio
+
+
+
+select Autore.codice, count(*) as apps
+from Autore join Programmatore on Autore.codice = Programmatore.codice
+group by Autore.codice
+order by apps desc
+limit 1
+
