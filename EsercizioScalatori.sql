@@ -27,7 +27,7 @@ where scalatore.nazioneNascita = scalata.nazione
 group by scalata.nazione
 
 Esercizio 6
-use scalatori;
+
 select scalatore.cf, scalatore.nazioneNascita, nazione.continente, scalata.nazione
 from scalatore left join scalata on cf = scalatore 
     join nazione on nome =nazioneNascita
@@ -41,3 +41,9 @@ from scalatore join scalata on scalatore.cf = scalata.scalatore
 group by scalata.anno, scalata.nazione having count(*)>1
 order by scalata.anno
 
+Esercizio 8
+
+select scalata.nazione, count(*)/count(scalata.anno) as mediascalata
+from scalatore join scalata on scalatore.cf = scalata.scalatore
+where scalatore.nazioneNascita != scalata.nazione
+group by scalata.nazione
