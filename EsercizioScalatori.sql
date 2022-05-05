@@ -47,3 +47,19 @@ select scalata.nazione, count(*)/count(distinct anno) as mediaScalata
 from scalatore join scalata on scalatore.cf = scalata.scalatore
 where scalatore.nazioneNascita != scalata.nazione
 group by scalata.nazione
+
+Esercizio 5
+use scalatori;
+select continente, count(*)
+from scalata join scalatore on cf=scalatore
+    join nazione on nome=nazioneNascita
+group by continente
+
+union 
+
+select continente, 0 /*stucchetto che ti permette di unire le due tabaelle*/
+from nazione
+where continente not in 
+    (select continente
+     from nazione join scalatore on nome = nazioneNascita
+        join scalata on cf = scalatore)
