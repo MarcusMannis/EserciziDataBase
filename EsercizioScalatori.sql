@@ -35,7 +35,7 @@ where continente != "America"
 
 Esercizio 7
 
-select scalata.anno, scalata.nazione, count(*) as numeroScsalate
+select scalata.anno, scalata.nazione, count(*)
 from scalatore join scalata on scalatore.cf = scalata.scalatore
     join nazione on nazione.nome = scalata.nazione
 group by scalata.anno, scalata.nazione having count(*)>1
@@ -43,7 +43,7 @@ order by scalata.anno
 
 Esercizio 8
 
-select scalata.nazione, count(*)/count(scalata.anno) as mediascalata
+select scalata.nazione, count(*)/count(distinct anno) as mediaScalata
 from scalatore join scalata on scalatore.cf = scalata.scalatore
 where scalatore.nazioneNascita != scalata.nazione
 group by scalata.nazione
