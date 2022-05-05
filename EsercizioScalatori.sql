@@ -1,4 +1,3 @@
-
 Esercizio 1
 
 select distinct s.scalatore as A, n.continente as B
@@ -49,7 +48,7 @@ where scalatore.nazioneNascita != scalata.nazione
 group by scalata.nazione
 
 Esercizio 5
-use scalatori;
+
 select continente, count(*)
 from scalata join scalatore on cf=scalatore
     join nazione on nome=nazioneNascita
@@ -63,3 +62,13 @@ where continente not in
     (select continente
      from nazione join scalatore on nome = nazioneNascita
         join scalata on cf = scalatore)
+
+Esercizio 9
+
+select distinct Scalatore.*
+from Scalatore join scalata on scalatore.cf = scalata.scalatore
+where Scalatore.nazioneNascita in
+    (select Scalata.nazione
+    from Scalata
+    where (Scalata.anno- Scalatore.annoNascita) < 18
+    )
